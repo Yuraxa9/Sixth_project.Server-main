@@ -7,16 +7,16 @@ export class Card {
    * @param cardTemplateSelector - селектор шаблона карточки из разметки
    * @param item - элемент из массива {_id: ID карточки, name: название, link: ссылка, likes: лайки, owner{} - данные о владельце карточки ({_id: ID владельца})} */
   constructor({item, currentUser, handleCardClick, handleDeleteCard, handleLikeCard}, cardTemplateSelector) {
-    this._cardId = item._id;
-    this._name = item.name;
-    this._link = item.link;
-    this._likes = item.likes;
-    this._ownerId = item.owner._id;
-    this._cardElement = cardTemplateSelector;
-    this._handleCardClick = handleCardClick;
-    this._handleDeleteCard = handleDeleteCard;
-    this._handleLikeCard = handleLikeCard;
-    this._currentUser = currentUser;
+    this._cardId = item._id; // ID карточки, используется для идентификации.
+    this._name = item.name; // Название карточки (например, название места).
+    this._link = item.link; // Ссылка на изображение для карточки.
+    this._likes = item.likes; // Массив пользователей, поставивших лайк.
+    this._ownerId = item.owner._id; // ID владельца карточки (создателя).
+    this._cardElement = cardTemplateSelector; // Селектор шаблона карточки из разметки.
+    this._handleCardClick = handleCardClick; // Функция для обработки клика по изображению.
+    this._handleDeleteCard = handleDeleteCard; // Функция для обработки удаления карточки.
+    this._handleLikeCard = handleLikeCard; // Функция для обработки постановки/удаления лайка.
+    this._currentUser = currentUser; // ID текущего пользователя, чтобы различать владельца и других пользователей.
   }
 
   /** Получает шаблон, клонирует его
